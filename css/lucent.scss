@@ -56,6 +56,10 @@ $susy: (
 
 p {
 	margin: 0 0 1em 0;
+	font-size: 16px;
+	@include breakpoint($mobile) {
+		font-size: 18px;
+	}
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,8 +68,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h2 {
-	font-size: 48px;
+	font-size: 28px;
 	font-weight: normal;
+	@include breakpoint($mobile) {
+		font-size: 48px;
+	}
 }
 
 h3 {
@@ -137,19 +144,30 @@ a {
 	@include border-top;
 
 	p {
-		width: 600px;
-		margin-left: auto;
-		margin-right: auto;
+		@include breakpoint($mobile) {
+			@include center(7);	
+		}
+		
 	}
 
 }
 
 .image-contained {
-	border: 1px solid $grey;
-	@include center(8);
 	img {
-		width: 100%;
+		width: 125%;
 		overflow: hidden;
+		margin: 0 -12.5%;
+	}
+
+	@include breakpoint($tablet) {
+		@include center(8);
+		border: 1px solid $grey;
+		
+		img {
+			width: 100%;
+			overflow: hidden;
+			margin: 0;
+		}
 	}
 }
 
@@ -165,20 +183,16 @@ a {
 header {
 	text-align: center;
 	padding: 25px 0;
-
-	p {
-		font-size: 16px;
-		margin: 0;
-	}
 }
 
 .logo {
 	background: url("http://media.lucent.space.s3.amazonaws.com/logo.png") top center no-repeat;
 	background-size: 48px;
 	font-weight: normal;
-	font-size: 18px;
-	padding-top: 60px;
+	font-size: 14px;
+	padding-top: 55px;
 	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 .life {
